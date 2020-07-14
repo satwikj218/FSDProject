@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Grocery Store</title>
+        <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+        <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+        <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="login.css">
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <script>
+            $(document).ready(function(){
+                $("#btnSubmit").click(function(){
+                    var api_url = "http://localhost:3002/register1/:username/:password";
+                    var data = {
+                        username : $("#id1").val(),
+                        password : $("#id2").val()
+                    }
+                    $.ajax({
+                        url: api_url,
+                        type: "GET",
+                        dataType: "Json",
+                        data: data,
+                        success: function(data){
+                            alert("Login Successful");
+                        },
+                        error: function(){
+                            alert("Incorrect Username or Password");
+                        }
+                    });
+                });
+            });
+        </script>
+    </head>
+
+    <body>
+        <header id="header">
+            <nav class="navbar navbar-expand-lg px-4">
+                <a href="#header" class="navbar-brand">
+                    <img src="../Main Project/img/grocery.png" height="50px" alt="main icon">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav text-capitalise mx-auto">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#store" class="nav-link">Store</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#services" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="Login/login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="register.html" class="nav-link">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="cart.html" class="nav-link">Cart</a>
+                        </li>
+                    </ul>
+                    <div class="nav-info-items d-none d-lg-flex">
+                        <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+                            <span class="info-icon mx-lg-3">
+                                <i class="fa fa-phone fa-lg"></i>
+                            </span>
+                            <p class="mb-0">+91 12345 67890 </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+        <div class="container h-100 login">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center">
+                        <div class="brand_logo_container">
+                            <img src="../Main Project/img/grocery.png" class="brand_logo" alt="Logo">
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-center form_container">
+                        <form>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" id="id1" name="" class="form-control input_user" value="" placeholder="username">
+                            </div>
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                </div>
+                                <input type="password" id="id2" name="" class="form-control input_pass" value="" placeholder="password">
+                            </div>
+                            <div class="form-group">
+                                <div class="custom-control custom-checkbox">
+                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                </div>
+                            </div>
+                                <div class="d-flex justify-content-center mt-3 login_container">
+                         <button type="button" id="btnSubmit" class="btn login_btn">Login</button>
+                       </div>
+                        </form>
+                    </div>
+            
+                    <div class="mt-4">
+                        <div class="d-flex justify-content-center links">
+                            Don't have an account? <a href="register.html" class="ml-2">Sign Up</a>
+                        </div>
+                        <div class="d-flex justify-content-center links">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>

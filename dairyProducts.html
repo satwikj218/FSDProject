@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vegetables</title>
+        <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <script src="https://unpkg.com/ionicons@5.1.2/dist/ionicons.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    </head>
+    <body>
+        <header id="header">
+            <nav class="navbar navbar-expand-lg px-4">
+                <a href="#header" class="navbar-brand">
+                    <img src="../Main Project/img/grocery.png" height="50px" alt="main icon">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav text-capitalise mx-auto">
+                        <li class="nav-item active">
+                            <a href="index.html#header" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#store" class="nav-link">Store</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#services" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="register.html" class="nav-link">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="cart.html" class="nav-link">Cart</a>
+                        </li>
+                    </ul>
+                    <div class="nav-info-items d-none d-lg-flex">
+                        <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+                            <span class="info-icon mx-lg-3">
+                                <i class="fa fa-phone fa-lg"></i>
+                            </span>
+                            <p class="mb-0">+91 12345 67890 </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <div class="container-fluid">
+                <div class="row max-height justify-content-center align-items-center">
+                    <div class="col-10 mx-auto banner text-center">
+                        <h1 class="text-capitalize">
+                            Welcome to <strong class="banner-title">grocery Store</strong>
+                        </h1>
+                        <a href="#store" class="btn btn-white banner-link text-uppercase my-2">explore</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+        
+        <section class="about py-5" id="about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10 mx-auto col-md-6 my-5">
+                        <h1 class="text-capitalize">about <strong class="banner-title">us</strong></h1>
+                        <p class="my-4 text-muted w-75">
+                    We are proud to be associated closely with the farmers from whom we source our fresh products. 
+                    Most of our farm-fresh products are sourced directly from farmers, which not only ensures the best prices and freshest products for our customers but also helps the farmers get better prices.<br>
+                    Discover new products and shop for all your food and grocery needs from the comfort of your home or office. 
+                    No more getting stuck in traffic jams, paying for parking, standing in long queues and carrying heavy bags – get everything you need, when you need, right at your doorstep. 
+                    Grocery shopping is now easy as every product on your monthly shopping list, is now available online at our Grocery Store, 
+                    India’s best online grocery store.
+                        </p>
+                        <a href="#store" class="btn btn-black text-uppercase">
+                            explore
+                        </a>
+                    </div>
+                    <div class="col-10 mx-auto col-md-6 my-5 align-self-center">
+                        <div class="about-img__container">
+                            <img src="../Main Project/img/about.jpg" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="store" class="store py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-10 mx-auto col-sm-6 text-center">
+                        <h1 class="text-capitalize">our <strong class="banner-title">store</strong></h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto d-flex justify-content-around sortBtn flex-wrap">
+                        <a href="index.html#store" class="btn btn-black text-uppercase filter-btn m-2" data-filter="alt">All</a>
+                        <a href="vegetables.html#store" class="btn btn-black text-uppercase filter-btn m-2" data-filter="alt">Vegetables</a>
+                        <a href="fruits.html#store" class="btn btn-black text-uppercase filter-btn m-2" data-filter="alt">Fruits</a>
+                        <a href="dairyProducts.html#store" class="btn btn-black text-uppercase filter-btn m-2" data-filter="alt">Dairy Products</a>
+                    </div>
+                </div>
+                <div class="row store-items" id="store-items">
+                    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <img src="../Main Project/img/dairy-1.jpg" class="card-img-top store-img" alt="">
+                                <a href="dairyProducts.html#store" class="add-to-cart" data-name="Milk" data-price="5"><span class="store-item-icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text d-flex justify-content-between text-capitalize">
+                                    <h5 id="store-item-name"> Milk</h5>
+                                    <h5 class="store-item-value">Rs. <strong id="store-item-price" class="font-weight-bold">5</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <img src="../Main Project/img/dairy-2.jpg" class="card-img-top store-img" alt="">
+                                <a href="dairyProducts.html#store" class="add-to-cart" data-name="Cheese" data-price="10"><span class="store-item-icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text d-flex justify-content-between text-capitalize">
+                                    <h5 id="store-item-name"> Cheese</h5>
+                                    <h5 class="store-item-value">Rs. <strong id="store-item-price" class="font-weight-bold">10</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <img src="../Main Project/img/dairy-3.jpg" class="card-img-top store-img" alt="">
+                                <a href="dairyProducts.html#store" class="add-to-cart" data-name="Bread" data-price="15"><span class="store-item-icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text d-flex justify-content-between text-capitalize">
+                                    <h5 id="store-item-name"> Bread</h5>
+                                    <h5 class="store-item-value">Rs. <strong id="store-item-price" class="font-weight-bold">15</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-10 col-sm-6 col-lg-4 mx-auto my-3 store-item sweets" data-item="sweets">
+                        <div class="card single-item">
+                            <div class="img-container">
+                                <img src="../Main Project/img/dairy-4.jpg" class="card-img-top store-img" alt="">
+                                <a href="dairyProducts.html#store" class="add-to-cart" data-name="Egg" data-price="20"><span class="store-item-icon">
+                                    <i class="fa fa-shopping-cart"></i>
+                                </span></a>
+                            </div>
+                            <div class="card-body">
+                                <div class="card-text d-flex justify-content-between text-capitalize">
+                                    <h5 id="store-item-name"> Egg</h5>
+                                    <h5 class="store-item-value">Rs. <strong id="store-item-price" class="font-weight-bold">20</strong></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-center mt-3 login_container">
+                    <a href="cart.html" class="btn btn-black text-uppercase filter-btn m-2">Go to Cart</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 text-center my-3">
+                        <img src="../Main Project/img/soap.png" height="150px" alt="vegetable">
+                        <h6 class="text-uppercase my-3 service-title">Hygiene</h6>
+                        <p class="w-75 mx-auto text-left service-text">
+                            We effectively maintain our workplace with atmost Hygiene.
+                    All the Vegetables, Fruits and Dairy Products are Clean and Fresh.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center my-3">
+                        <img src="../Main Project/img/delivery-truck.png" height="150px" alt="bread icon">
+                        <h6 class="text-uppercase my-3 service-title">Delivery</h6>
+                        <p class="w-75 mx-auto text-left service-text">
+                            We Deliver around the clock and on weekends and Bank Holidays.
+                    Free and Fast Delivery within 2 hours of your order at you doorstep.
+                        </p>
+                    </div>
+                    <div class="col-md-4 text-center my-3">
+                        <img src="../Main Project/img/warehouse.png" height="150px" alt="bread icon">
+                        <h6 class="text-uppercase my-3 service-title">Packaging</h6>
+                        <p class="w-75 mx-auto text-left service-text">
+                            Quality is safe-guarded at the packaging line. 
+                            This packaging ensures that food has a longer shelf life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+           </section>
+        
+           <footer id="contact">
+               <div class="container-fluid">
+                   <div class="row">
+                        <div class="col-md-6 footer-title py-5">
+                            <h1 class="text-capitalize text-center"> 
+                                <strong class="banner-title">grocery Store</strong>
+                            </h1>
+                            <div class="footer-icons mt-3 d-flex justify-content-around flex-wrap">
+                                <a href="#" class="footer-icon-social">
+                                    <i class="fa fa-facebook"></i>
+                                </a>
+                                <a href="#" class="footer-icon-social">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a href="#" class="footer-icon-social insta">
+                                    <i class="fa fa-instagram"></i>
+                                </a>
+                                <a href="#" class="footer-icon-social google">
+                                    <i class="fa fa-google-plus"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-6 footer-contact text-center text-capitalize p-5">
+                            <h3 class="mb-5">Contact</h3>
+                            <p class="d-flex flex-wrap ">
+                                <span class="mr-4 footer-icon">
+                                    <i class="fa fa-map"></i>
+                                </span>
+                                <span>
+                                    123 Main Street, Jubliee Hills, Hyderabad.
+                                </span>
+                            </p>
+                            <p class="d-flex flex-wrap ">
+                                <span class="mr-4 footer-icon">
+                                    <i class="fa fa-phone"></i>
+                                </span>
+                                <span>
+                                    +91 12345 67890
+                                </span>
+                            </p>
+                            <p class="d-flex flex-wrap ">
+                                <span class="mr-4 footer-icon">
+                                    <i class="fa fa-envelope"></i>
+                                </span>
+                                <span>
+                                    grocerystore@gmail.com
+                                </span>
+                            </p>
+                        </div>
+                   </div>
+               </div>
+           </footer>
+           <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+           <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+           <script>
+
+            $(".add-to-cart").click(function(event){
+                event.preventDefault();
+                var name = $(this).attr("data-name");
+                var price = Number($(this).attr("data-price"));
+
+                addItemToCart(name, price, 1);
+                displayCart();
+            });
+
+            $("#clear-cart").click(function(event) {
+                clearCart();
+                displayCart();
+            });
+
+            function displayCart() {
+                var cartArray = listCart();
+                var output ="";
+                for(var i in cartArray) {
+                    output += "<li>"
+                    +cartArray[i].name
+                    +"  "+cartArray[i].count
+                    +" x  "+cartArray[i].price
+                    +" = "+cartArray[i].total
+                    +"<button class='subtract-item' data-name='"+cartArray[i].name+"'>-</button>"
+                    +" <button class='plus-item' data-name='"+cartArray[i].name+"'>+</button>"
+                    +" <button class='delete-item' data-name='"+cartArray[i].name+"'>X</button>"
+                    +"</li>"
+                }
+                $("#show-cart").html(output);
+                $("#total-cart").html(totalCart());               
+            }
+
+            $("#show-cart").on("click", ".delete-item", function(event){
+                var name = $(this).attr("data-name");
+                removeItemFromCartAll(name);
+                displayCart();
+            });
+
+            $("#show-cart").on("click", ".subtract-item", function(event){
+                var name = $(this).attr("data-name");
+                removeItemFromCart(name);
+                displayCart();
+            });
+            
+
+            $("#show-cart").on("click", ".plus-item", function(event){
+                var name = $(this).attr("data-name");
+                addItemToCart(name, 0 ,1);
+                displayCart();
+            });
+
+
+            //*********************************************************************************
+            //           SHOPPING CART
+
+
+            var cart = [];
+        
+            var Item = function(name, price, count){
+                this.name = name
+                this.price = price
+                this.count  = count
+            };
+
+            function addItemToCart(name, price, count)  {
+                for( var i in cart) {
+                    if(cart[i].name == name) {
+                        cart[i].count += count;
+                        saveCart();
+                        return;
+                    }
+                }
+                var item = new Item(name, price, count);
+                cart.push(item); 
+                saveCart();
+            }
+
+            function removeItemFromCart(name) {
+                for ( var i in cart ) {
+                    if(cart[i].name == name) {
+                        cart[i].count--;
+                        if(cart[i].count == 0) {
+                            cart.splice(i, 1);             //position, No of items
+                        }
+                        break;
+                    }
+                }
+                saveCart();
+            }
+
+            function removeItemFromCartAll(name) {
+                for(var i in cart) {
+                    if(cart[i].name == name) {
+                        cart.splice(i, 1);
+                        break;
+                    }
+                }
+                saveCart();
+            }           
+
+            function clearCart() {
+                cart = [];
+                saveCart();
+            }
+
+            function countCart() {
+                var totalCount = 0;
+                for (var i in cart) {
+                    totalCount += cart[i].count;
+                }
+                return totalCount.toFixed(2);  //precision
+            }
+
+            function totalCart() {
+                var totalCost = 0;
+                for (var i in cart) {
+                    totalCost += cart[i].price * cart[i].count;
+                }
+                return totalCost;
+            }
+
+            function listCart() {
+                var cartCopy = [];
+                for(var i in cart) {
+                    var item = cart[i];
+                    var itemCopy = {};
+                    for(var p in item) {
+                        itemCopy[p] = item[p]; 
+                    }
+                    itemCopy.total = (item.price * item.count).toFixed(2);
+                    cartCopy.push(itemCopy);
+                }
+                return cartCopy;
+            }
+
+            function saveCart() {
+                localStorage.setItem("shoppingCart", JSON.stringify(cart));
+            }
+
+            function loadCart() {
+                cart = JSON.parse(localStorage.getItem("shoppingCart"));
+            }
+
+            loadCart();
+            displayCart();
+        </script>
+    </body>
+</html>

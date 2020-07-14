@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>Grocery Store</title>
+        <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="styles.css"/>
+        <link rel="stylesheet" href="register.css">
+        <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <script src ="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('#btnsubmit').click(function(){
+                var v1 = $("#id1").val();
+                var v2 = $("#id2").val();
+                var v3 = $("#id3").val();
+                var v4 = $("#id4").val();
+                var v5 = $("#id5").val();
+                var v6 = $("#id6").val();
+                var s = 0;
+
+                if(v1 == '')
+                {
+                    $("#id1").addClass("test");   
+                }
+                else{
+                    $("#id1").addClass("test1");
+                    s=s+1;
+                }
+                if(/[6-9][0-9]{9}$|[0][6-9][0-9]{9}$|[+][9][1][6-9][0-9]{9}$/.test(v2))
+                {
+                    s=s+1;
+                    $("#id2").addClass("test1");
+                        
+                }
+                else{
+                    $("#id2").addClass("test");
+                }
+                if(/[a-z]{4,12}$/.test(v3))
+                {
+                    s=s+1;
+                    $("#id3").addClass("test1");
+                }
+                else{
+                    $("#id3").addClass("test");
+                }
+                
+                if(/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$]).{5,12}$/.test(v4))
+                { 
+                    s=s+1;   
+                    $("#id4").addClass("test1");
+                }
+                else{
+                    $("#id4").addClass("test");
+                }
+
+                if(/^[a-zA-Z._0-9-]{3,12}[@][a-z]{3,15}[.][a-z]{2,6}$/.test(v5))
+                {
+                    s=s+1;
+                    $("#id5").addClass("test1");
+                }
+                else{
+                    $("#id5").addClass("test");
+                }
+                if(v6 == '')
+                {
+                    
+                    $("#id6").addClass("test");
+                }
+                else{
+                    s=s+1;
+                    $("#id6").addClass("test1");
+                }
+                if(s == 6){
+                    window.alert('insertion into db successfull!!');
+                    window.alert(s);
+                    var api_url ="http://localhost:3002/register1";
+                    var data = {
+                        name : $('#id1').val(),
+                        mobile : $('#id2').val(),
+                        username : $('#id3').val(),
+                        password : $('#id4').val(),
+                        email : $('#id5').val(),
+                        address : $('#id6').val(),
+                    }
+                    $.ajax({
+                        url:api_url,
+                        type : "POST" ,
+                        dataType : "Json",
+                        data : data,
+                        success:function(data){
+                            alert('values are submitted');
+                        },
+                        error:function() {
+                            alert('wrong with insert ');
+                        }
+                    });
+                }
+                else{
+                    window.alert('insertion into db failed');
+                    window.alert(s);
+                }
+                });
+            });
+        </script>
+        <style>
+            .test{
+                border: 2px solid red;
+            }
+            .test1{
+                border: 2px solid lightgreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">
+            <nav class="navbar navbar-expand-lg px-4">
+                <a href="#header" class="navbar-brand">
+                    <img src="../Main Project/img/grocery.png" height="50px" alt="main icon">
+                </a>
+                <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="navbar-nav text-capitalise mx-auto">
+                        <li class="nav-item active">
+                            <a href="index.html" class="nav-link">Home</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#about" class="nav-link">About</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#store" class="nav-link">Store</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#services" class="nav-link">Services</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="index.html#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="login.html" class="nav-link">Login</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="register.html" class="nav-link">Register</a>
+                        </li>
+                        <li class="nav-item active">
+                            <a href="cart.html" class="nav-link">Cart</a>
+                        </li>
+                    </ul>
+                    <div class="nav-info-items d-none d-lg-flex">
+                        <div class="nav-info align-items-center d-flex justify-content-between mx-lg-5">
+                            <span class="info-icon mx-lg-3">
+                                <i class="fa fa-phone fa-lg"></i>
+                            </span>
+                            <p class="mb-0">+91 12345 67890 </p>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <section>
+        <div class="container h-100 login">
+            <div class="d-flex justify-content-center h-100">
+                <div class="user_card">
+                    <div class="d-flex justify-content-center form_container">
+                        <form>
+                            <h3>Sign Up</h3>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" id="id1" name="" class="form-control input_name" value="" placeholder="name">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-mobile"></i></span>
+                                </div>
+                                <input type="text" id="id2" name="" class="form-control input_pass" value="" placeholder="mobile number">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                </div>
+                                <input type="text" id="id3" name="" class="form-control input_user" value="" placeholder="username">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-key"></i></span>
+                                </div>
+                                <input type="password" id="id4" name="" class="form-control input_pass" value="" placeholder="password">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                                </div>
+                                <input type="text" id="id5" name="" class="form-control input_pass" value="" placeholder="email">
+                            </div>
+
+                            <div class="input-group mb-3">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-map"></i></span>
+                                </div>
+                                <textarea name="" id="id6" cols="30" rows="3" class="form-control input_pass" placeholder="address"></textarea>
+                            </div>
+
+                            <div class="d-flex justify-content-center mt-3 login_container">
+                                <button type="button" id="btnsubmit" class="btn login_btn">Register</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+    <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
+    </body>
+</html>

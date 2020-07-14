@@ -1,0 +1,54 @@
+.user_card {
+    height: 700px;
+    width: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background: lightgrey;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
+
+.items{
+    padding-bottom: 10px;
+    word-spacing: 0.5rem;
+}
+
+.login_btn {
+    margin-left: 5px;
+    width: 30px;
+    background: #c0392b !important;
+    color: white !important;
+}
+.login_btn:focus {
+    box-shadow: none !important;
+    outline: 0px !important;
+}
+
+.buttons#clear-cart{
+    margin-top: 15px;
+    margin-left: 50px;
+}
+
+.buttons{
+    margin-top: 15px;
+    margin-right: 10px;
+}
+
+section{
+    min-height: calc(100vh - 76px);
+    background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)), url('../Main Project/img/background1.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+h3{
+    text-align: center;
+    margin-bottom: 15px;
+}
