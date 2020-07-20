@@ -131,14 +131,16 @@
                 displayCart();
             });
             
-
             $("#show-cart").on("click", ".plus-item", function(event){
                 var name = $(this).attr("data-name");
                 addItemToCart(name, 0 ,1);
                 displayCart();
             });
 
+
+            //*********************************************************************************
             //           SHOPPING CART
+
 
             var cart = [];
         

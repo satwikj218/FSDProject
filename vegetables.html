@@ -312,7 +312,6 @@
                 displayCart();
             });
             
-
             $("#show-cart").on("click", ".plus-item", function(event){
                 var name = $(this).attr("data-name");
                 addItemToCart(name, 0 ,1);
@@ -357,7 +356,7 @@
                 }
                 saveCart();
             }
-
+  
             function removeItemFromCartAll(name) {
                 for(var i in cart) {
                     if(cart[i].name == name) {

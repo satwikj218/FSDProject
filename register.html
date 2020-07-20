@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>Grocery Store</title>
         <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
@@ -8,47 +7,11 @@
         <link rel="stylesheet" href="../Main Project/register.css">
         <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"/>
         <script src ="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $(document).ready(function(){
                 $("#btnsubmit").click(function(){
-                    var api_url ="http://localhost:3002/register1";
-                    var data = {
-                        name : $('#id1').val(),
-                        mobile : $('#id2').val(),
-                        username : $('#id3').val(),
-                        password : $('#id4').val(),
-                        email : $('#id5').val(),
-                        address : $('#id6').val(),
-                    }
-                    $.ajax({
-                        url:api_url,
-                        type : "POST" ,
-                        dataType : "Json",
-                        contentType: "application/json; charset=utf-8",
-                        data: JSON.stringify(data),
-                        success: function (data) {
-                            if (data == 1)
-                            {
-                                alert('We got your Details, We make it secure ..!');
-                            }
-                            else
-                            {
-                                alert('Web detials already Exists..!');
-                            }
-                        },
-                        error: function ()
-                        {
-                            alert('failed');
-                        }
-                        /*data : data,
-                        success:function(data){
-                            alert('values are submitted');
-                            return;
-                        },
-                        error:function() {
-                            alert('wrong with insert ');
-                        }*/
-                    });
+                    return validated();
                 });
             });
         </script>
@@ -109,7 +72,7 @@
             <div class="d-flex justify-content-center h-100">
                 <div class="user_card">
                     <div class="d-flex justify-content-center form_container">
-                        <form class="login_form" method="POST" name="form" onsubmit="return validated()" action="">
+                        <form class="login_form" method="POST" name="form" action="">
                             <h3>Sign Up</h3>
 
                             <div class="input-group mb-3">
@@ -117,7 +80,7 @@
                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
                                 <input type="text" name="name1" class="form-control input_name" id="id1" value="" placeholder="name"><br>
-                                <div id="name1_error">please enter  your full name</div>
+                                <div id="name1_error">Please Enter your Full Name</div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -125,7 +88,7 @@
                                     <span class="input-group-text"><i class="fa fa-mobile"></i></span>
                                 </div>
                                 <input type="text" name="mobile" class="form-control input_pass" value="" id="id2" placeholder="mobile number"><br>
-                                <div id="mobile_error">please enter  your 10 digit mobile number</div>
+                                <div id="mobile_error">Please Enter your 10 Digit Mobile Number</div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -133,7 +96,7 @@
                                     <span class="input-group-text"><i class="fa fa-user"></i></span>
                                 </div>
                                 <input type="text" name="user" class="form-control input_user" value=""  id="id3" placeholder="username"><br>
-                                <div id="user_error">username should be more than 4 characters</div>
+                                <div id="user_error">Username should be more than 4 characters</div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -141,7 +104,7 @@
                                     <span class="input-group-text"><i class="fa fa-key"></i></span>
                                 </div>
                                 <input type="password" name="password" class="form-control input_pass" value=""   id="id4" placeholder="password"><br>
-                                <div id="password_error">your password should contain atleast on specialcharacter,digit,capital letter,small letter</div>
+                                <div id="password_error">Password should contain atleast One Special Character, One Digit, One Capital Letter, One Small Letter</div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -149,7 +112,7 @@
                                     <span class="input-group-text"><i class="fa fa-envelope"></i></span>
                                 </div>
                                 <input type="text" name="email" class="form-control input_pass" value=""   id="id5" placeholder="email"><br>
-                                <div id="email_error">please enter your email/Gmail account Id </div>
+                                <div id="email_error">Please Enter your email Id </div>
                             </div>
 
                             <div class="input-group mb-3">
@@ -157,11 +120,11 @@
                                     <span class="input-group-text"><i class="fa fa-map"></i></span>
                                 </div>
                                 <textarea name="address"  cols="30" rows="9" class="form-control input_pass"   id="id6" placeholder="address"></textarea><br>
-                                <div id="address_error">please enter  your  Address</div>
+                                <div id="address_error">Please enter your Address</div>
                             </div>
 
                             <div class="d-flex justify-content-center mt-3 login_container">
-                                <button type="submit" id="btnsubmit" class="btn login_btn">Register</button>
+                                <button type="button" id="btnsubmit" class="btn login_btn">Register</button>
                             </div>
                         </form>
                     </div>

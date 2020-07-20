@@ -1,32 +1,53 @@
 <!DOCTYPE html>
 <html>
-
     <head>
         <title>Grocery Store</title>
+        <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
         <link rel="stylesheet" href="../bootstrap-4.5.0-dist/css/bootstrap.min.css"/>
         <script src="../bootstrap-4.5.0-dist/js/bootstrap.min.js"></script>
-        <script src="../bootstrap-4.5.0-dist/js/jquery.min.js"></script>
         <link rel="stylesheet" href="styles.css"/>
         <link rel="stylesheet" href="login.css">
         <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css"/>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <script>
             $(document).ready(function(){
                 $("#btnSubmit").click(function(){
-                    var api_url = "http://localhost:3002/register1/:username/:password";
-                    var data = {
-                        username : $("#id1").val(),
-                        password : $("#id2").val()
-                    }
+                    var data = {};
+                    data.username = $("#id1").val();
+                    data.password = $("#id2").val();
                     $.ajax({
-                        url: api_url,
-                        type: "GET",
-                        dataType: "Json",
-                        data: data,
-                        success: function(data){
-                            alert("Login Successful");
+                        type:"POST",
+                        url:"http://localhost:4002/login/",
+                        data:JSON.stringify(data),
+                        contentType:"application/json; charset=utf-8",
+                        dataType:"json",
+                        success:function(d){
+                            if(d.code == 400){
+                                swal({
+                                title: "Invalid Username or Password",
+                                text: "Please Try Again",
+                                icon: "error",
+                                button: "Ok",
+                            });
+                                return false;    
+                            }
+                            swal({
+                                title: "Successfully Logged In",
+                                text: "Welcome to our Store",
+                                icon: "success",
+                                button: "Ok",
+                            })
+                            .then((value) => {
+                            swal(window.location.href = 'index.html');
+                            });
                         },
-                        error: function(){
-                            alert("Incorrect Username or Password");
+                        error:function(jqxhr){
+                            swal({
+                                title: "Invalid Username or Password",
+                                text: "Please Try Again",
+                                icon: "error",
+                                button: "Ok",
+                            });
                         }
                     });
                 });
