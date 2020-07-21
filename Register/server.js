@@ -55,6 +55,7 @@ app.post('/register',(req,res) =>{
     });
 });
 
+//Route for Checking Login
 app.post('/login',(req,res) =>{
     let username = req.body.username;
     let password = req.body.password;
@@ -71,6 +72,28 @@ app.post('/login',(req,res) =>{
             res.send({
                 "code":200,
                 "success":"Successful Login"
+            });
+        }
+    });
+});
+
+//Route for Updating Password
+app.post('/updatepass',(req,res) =>{
+    let password = req.body.password;
+    let email = req.body.email;
+    console.log(password,email);
+    connection.query('update register1 set password = ? where email = ?',[password,email],function(error,results,fields){
+        var x = JSON.stringify(results);
+        if(x == "[]"){
+            res.send({
+                "code":400,
+                "failed":"Cant find Email"
+            });
+        }
+        else{
+            res.send({
+                "code":200,
+                "success":"Update Successful"
             });
         }
     });

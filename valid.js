@@ -122,8 +122,64 @@ function validated(){
          }
       });
    }
- }
- 
+}
+
+///////////////////////////call this function in password.html
+function passupdate(){
+   debugger;
+   var z = 0;
+   var p = /(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@$#%^&()*]).{5,12}/g;
+   if(password.value.match(p)){
+     z = z+1;
+   }
+   else{
+     password.focus();
+     password_error.style.display = "block";
+     return false;
+   }
+   if(z == 1){
+      var data = {};
+      data.password = $('#id2').val();
+      data.email = $('#id1').val();
+      $.ajax({
+         type:"POST",
+         url:"http://localhost:4002/updatepass/",
+         data:JSON.stringify(data),
+         contentType:"application/json; charset=utf-8",
+         dataType:"json",
+         success:function(d){
+            if(d.code == 400){
+               swal({
+                  title: "Invalid email/password",
+                  text: "Please Try Again",
+                  icon: "error",
+                  button: "Ok",
+               });
+               return false;    
+            }
+            swal({
+               title: "Successfully updated password",
+               text: "Welcome to our Store",
+               icon: "success",
+               button: "Ok",
+            })
+            .then((value) => {
+               swal(window.location.href = 'login.html');
+            });
+         },
+         error:function(jqxhr){
+            swal({
+               title: "Invalid Username or email",
+               text: "Please Try Again",
+               icon: "error",
+               button: "Ok",
+            });
+         }
+      });
+   }
+}
+
+//////////////////////////////////////////////
 
 name1.addEventListener('textInput',name1_verify);
 function name1_verify(){
@@ -169,7 +225,6 @@ function email_verify(){
       return true;
    }
 }
-
 
 address.addEventListener('textInput',address_verify);
 function address_verify(){
